@@ -20,5 +20,13 @@ nla_data <- read.csv(nla_url, stringsAsFactors = FALSE)
 For this we will look at the mean of total nitrogen
 
 ```{r mean_ntl}
-mean(nla_data$NTL)
+adj_r2 <- summary(lm(log10(CHLA) ~ log10(PTL), data = nla_data))$adj.r.squared
+```
+
+# Figure
+Here is a plot of log tp vs log chla
+
+```{r plot, echo=FALSE}
+tp_chla_gg <- ggplot(nla_data, aes(x = log10(PTL), y = log10(CHLA)))+
+  geom_point()
 ```
