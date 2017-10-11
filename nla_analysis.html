@@ -127,8 +127,11 @@ $(document).ready(function () {
 <div id="analysis" class="section level1">
 <h1>Analysis</h1>
 <p>For this we will look at the mean of total nitrogen</p>
-<pre class="r"><code>mean(nla_data$NTL)</code></pre>
-<pre><code>## [1] 1246.695</code></pre>
+<pre class="r"><code>adj_r2 &lt;- summary(lm(log10(CHLA) ~ log10(PTL), data = nla_data))$adj.r.squared</code></pre>
+</div>
+<div id="figure" class="section level1">
+<h1>Figure</h1>
+<p>Here is a plot of log tp vs log chla</p>
 </div>
 
 
