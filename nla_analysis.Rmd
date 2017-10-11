@@ -13,7 +13,9 @@ library(dplyr)
 
 ```{r read_data, echo=FALSE, message=FALSE, cache=TRUE}
 nla_url <- "https://raw.githubusercontent.com/USEPA/region7_r/master/lessons/data/fake_nla_1.csv"
+nla_url_2 <- "https://raw.githubusercontent.com/USEPA/region7_r/master/lessons/data/fake_nla_2.csv"
 nla_data <- read.csv(nla_url, stringsAsFactors = FALSE) 
+nla_data <- rbind(nla_data, read.csv(nla_url_2, stringsAsFactors = FALSE))
 ```
 
 # Analysis
@@ -21,6 +23,7 @@ For this we will look at the mean of total nitrogen
 
 ```{r mean_ntl}
 adj_r2 <- summary(lm(log10(CHLA) ~ log10(PTL), data = nla_data))$adj.r.squared
+adj_r2
 ```
 
 # Figure
