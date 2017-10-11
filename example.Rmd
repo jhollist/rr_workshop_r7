@@ -2,7 +2,9 @@
 title: "example rr doc"
 author: "Jeff Hollister"
 date: "October 11, 2017"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
