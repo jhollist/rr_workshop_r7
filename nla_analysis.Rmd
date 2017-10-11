@@ -1,0 +1,24 @@
+---
+title: "Important Analysis of the 2007 NLA"
+author: "Jeff Hollister"
+date: "October 11, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE, message=FALSE}
+knitr::opts_chunk$set
+library(ggplot2)
+library(dplyr)
+```
+
+```{r read_data, echo=FALSE, message=FALSE}
+nla_url <- "https://raw.githubusercontent.com/USEPA/region7_r/master/lessons/data/fake_nla_1.csv"
+nla_data <- read.csv(nla_url, stringsAsFactors = FALSE)
+```
+
+# Analysis
+For this we will look at the mean of total nitrogen
+
+```{r mean_ntl}
+mean(nla_data$NTL)
+```
