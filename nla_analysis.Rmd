@@ -29,4 +29,5 @@ Here is a plot of log tp vs log chla
 ```{r plot, echo=FALSE}
 tp_chla_gg <- ggplot(nla_data, aes(x = log10(PTL), y = log10(CHLA)))+
   geom_point()
+tp_chla_gg
 ```
